@@ -27,34 +27,84 @@ function useJSONResponse(json) {
 }
 
 function renderArticles(articleList) {
-    articleListHtml.innerText = "";
-    for (const articleData of articleList) {
-        console.log(articleData);
-        renderArticle(articleData);
-    }
+  // we need to remove the "No data" text in our html list container
+  articleListHtml.innerHTML = "";
+
+  // the server responds with a list of objects
+  // every object represents a article
+  // every article has the same structure (id, title, content)
+  for (const articleData of articleList) {
+    console.log(articleData);
+    renderArticle(articleData);
+  }
 }
 
 function renderArticle(articleData) {
-    const article = document.createElement("div");
-    article.classList.add("article-item");
-    const articleTitle = document.createElement("h3");
-    const articleContent = document.createElement("p");
-    const removeArticle = document.createElement("div");
-    removeArticle.innerHTML = trashSvg;
-    article.appendChild(articleTitle);
-    article.appendChild(articleContent);
-    article.appendChild(removeArticle);
+  const article = document.createElement("div");
+  article.classList.add("article-item");
+  const articleTitle = document.createElement("h3");
+  const articleTitleInput = document.createElement("input");
+  const articleContent = document.createElement("p");
+  const articleContentInput = document.createElement("input");
+  const removeArticle = document.createElement("div");
+  const editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  removeArticle.innerHTML = trashSvg;
 
-    articleListHtml.appendChild(article);
+  article.appendChild(articleTitle);
+  article.appendChild(articleTitleInput);
+  article.appendChild(articleContent);
+  article.appendChild(articleContentInput);
+  article.appendChild(removeArticle);
+  article.appendChild(editButton);
 
-    articleTitle.innerText = articleData.title;
-    articleContent.innerText = articleData.content;
+  articleListHtml.appendChild(article);
 
-    removeArticle.addEventListener("click", function() {
-        console.log("remove element");
-        article.remove();
-        fetch(`https://simple-json-server-scit.herokuapp.com/posts/${articleData.id}`, {
-            method: "DELETE"
-        }).then(getData);
-    });
+  // after creating the necessary html structure for a article items, we need to populated with data
+  // we use the "articleData" as data source
+  articleTitle.innerText = articleData.title;
+  articleTitleInput.value = articleData.title;
+  articleContent.innerText = articleData.content;
+  articleContentInput.value = articleData.content;
+
+  articleTitleInput.style.display = "none";
+  articleContentInput.style.display = "none";
+
+  removeArticle.addEventListener("click", function () {
+    console.log("remove element");
+    article.remove();
+    fetch(
+      `https://simple-json-server-scit.herokuapp.com/posts/${articleData.id}`,
+      {
+        method: "DELETE",
+      }
+    ).then(getData);
+  });
+
+  editButton.addEventListener("click", function () {
+    if (editButton.innerText === "Edit") {
+      articleTitle.style.display = "none";
+      articleTitleInput.style.display = "block";
+      articleContent.style.display = "none";
+      articleContentInput.style.display = "block";
+      editButton.innerText = "Save";
+    } else {
+      console.log("save to server");
+      const payload = {
+        title: articleTitleInput.value,
+        content: articleContentInput.value,
+      };
+
+      fetch(
+        `https://simple-json-server-scit.herokuapp.com/posts/${articleData.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload), // body data type must match "Content-Type" header
+        }
+      ).then(getData);
+    }
+  });
 }
