@@ -2,13 +2,13 @@ console.log("JavaScript - AJAX");
 
 const articleListHtml = document.querySelector(".article-list");
 
-document.getElementById("get-data").addEventListener('click', function() {
-    console.log("before fetch");
+document.getElementById("get-data").addEventListener('click', getData);
+
+function getData() {
     fetch("https://simple-json-server-scit.herokuapp.com/posts")
         .then(handleFetchResponse)
         .then(useJSONResponse);
-    console.log("after fetch");
-});
+  }
 
 function handleFetchResponse(response) {
     console.log("response", response);
@@ -40,4 +40,27 @@ function renderArticle(articleData) {
 
     articleTitle.innerText = articleData.title;
     articleContent.innerText = articleData.content;
+
+    fetch(`https://simple-json-server-scit.herokuapp.com/comments?postId=${articleData.id}`)
+    .then(handleFetchResponse)
+    .then(function() {
+        const commentList = document.createElement("div");
+        commentList.classList.add("comment-list");
+        article.appendChild(commentList);
+
+        for (const commentData of commentList) {
+            const articleComment = document.createElement("div");
+            articleComment.classList.add("comment");
+            const commentUser = document.createElement("h4");
+            const commentContent = document.createElement("p");
+
+            articleComment.appendChild(commentUser);
+            articleComment.appendChild(commentContent);
+
+            commentList.appendChild(articleComment);
+
+            commentUser.innerText = commentData.username;
+            commentContent.innerText = commentData.content;
+        }
+    });
 }
