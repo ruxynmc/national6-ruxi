@@ -11,12 +11,37 @@ console.log(a);
 const b = [];
 
 class Car {
-    constructor() {
-        this.color = "black";
+    constructor(color) {
+        this.color = color;
     }
 
-    starCar() {}
+    startCar() {
+        console.log("Start Car");
+    }
+}
+
+class CarWithElectricWindows extends Car {
+    openElectricWindow(windowNr) {
+        console.log("Opening window", windowNr);
+    }
 }
 
 const car1 = new Car("white");
 console.log(car1);
+// car1.openElectricWindow
+const car2 = new CarWithElectricWindows("black");
+console.log(car2);
+car2.startCar();
+car2.openElectricWindow(3);
+
+class MyArray extends Array {
+    printLengthWithJoy() {
+        console.log(this.length + "with joy");
+    }
+}
+
+const MyArray1 = new MyArray();
+myArray.push("abc");
+myArray.push("d");
+console.log(myArray1);
+myArray1.printLengthWithJoy();
