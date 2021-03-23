@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+.nav-bar {
+    background: rgb(250, 128, 128);
+    font-size: 25px;
+    font-family: 'Bree Serif', serif;
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.to-do-svg {
+    margin-right: 10px;
+}
+
+.to-do-list {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#input-new-task {
+    width: 200px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: groove;
+    border-left-style: groove;
+    border-color: lightgrey;
+    outline-color: grey;
+    font-family: 'Bree Serif', serif;
+}
+
+.new-input {
+    display: flex;
+}
+
+.task{
+    display: flex;
+    align-items: center;
+}
+
+.task-content {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: 'Bree Serif', serif;
+}
