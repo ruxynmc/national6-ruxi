@@ -25,6 +25,7 @@ body {
 
 #input-new-task {
     width: 200px;
+    margin-right: 10px;
     border-top-style: none;
     border-right-style: none;
     border-bottom-style: groove;
