@@ -1,0 +1,22 @@
+{
+  "name": "national6-ruxi",
+  "version": "1.0.0",
+  "description": "project of scit",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruxynmc/national6-ruxi.git"
+  },
+  "author": "ruxi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruxynmc/national6-ruxi/issues"
+  },
+  "homepage": "https://github.com/ruxynmc/national6-ruxi#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
