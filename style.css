@@ -1,0 +1,454 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://cdn.staticcrate.com/stock-hd/effects/footagecrate-4k-looping-network-tech-background-purple-1-prev-full.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar{
+    background-color: black;
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li{
+    list-style: none;
+}
+
+.navbar-links li a{
+    text-decoration: none;
+    color: rgb(189, 127, 230);
+    padding: 10px;
+    margin-right: 5px;
+    display: block;
+}
+
+.navbar-links li:hover {
+    border-bottom: solid rgb(189, 127, 230);
+}
+
+.toggle-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: rgb(189, 127, 230);
+    border-radius: 10px;
+}
+
+.footer{
+    background-color: black;
+    padding: 25px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(189, 127, 230);
+}
+
+.page-content{
+    position: relative;
+    color: rgb(189, 127, 230);
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main-section{
+    margin-top: 125px;
+    margin-bottom: 125px;
+    max-width: 70%;
+}
+
+.profile-content{
+    text-align: center;
+    min-height: 100%;
+}
+
+#profile-pic{
+    height: 150px;
+    border-radius: 50%;
+}
+
+.home-section{
+    margin-top: 100px;
+}
+
+.about-me-content{
+    background-color: white;
+    width: 80%;
+    padding: 30px;
+    color: rgb(98, 0, 128);
+    border-radius: 30px;
+}
+
+.about-me{
+    margin: 30px 30px 0px 30px;
+}
+
+.education-content{
+    background-color: white;
+    color: rgb(98, 0, 128);
+    border-radius: 30px;
+    padding: 30px;
+    padding-top: 15px;
+}
+
+.school-container{
+    margin-left: 15%;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    border-left: 2px solid rgb(98, 0, 128);
+}
+
+.school-logo{
+    width: 150px;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+.school-name{
+    margin-left: 10%;
+}
+
+.school-profile{
+    margin-left: 10%;
+}
+
+.skills-and-languages{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+}
+
+.skills{
+    display: flex;
+    flex-direction: column;
+}
+
+.languages{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+.skills-section{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+}
+
+.skill-category{
+    border-right: solid rgb(189, 127, 230);
+    border-width: 2px;
+    padding-right: 25px;
+}
+
+.skill-category ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+.skill-level ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+.skill-category li{
+    list-style: none;
+}
+
+.skill-level li{
+    list-style: none;
+    text-align: center;
+}
+
+.languages-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.language{
+    border-right: solid rgb(189, 127, 230);
+    border-width: 2px;
+    padding-right: 25px;
+}
+
+.language ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+.language-level ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+.language li {
+    list-style: none;
+}
+
+.language-level li{
+    list-style: none;
+    text-align: center;
+}
+
+.contact-section{
+    display: flex;
+}
+
+.my-contact-details{
+    padding-right: 50px;
+    border-right: solid rgb(189, 127, 230);
+    border-width: 2px;
+}
+
+.user-contact-details{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-input{
+    background-color: rgb(189, 127, 230);
+    border-bottom-color: rgb(98, 0, 128);
+    color: rgb(98, 0, 128);
+    border-top: hidden;
+    border-right: hidden;
+    border-left: hidden;
+    outline: none;
+    margin-bottom: 25px;
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.user-messege{
+    height: 130px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.user-input::placeholder{
+    color: rgb(98, 0, 128);
+}
+
+#send-messege-button{
+    background-color: rgb(189, 127, 230);
+    color: rgb(98, 0, 128);
+    border-style: solid;
+    border-color: rgb(98, 0, 128);
+    border-radius: 5px;
+    width: 150px;
+    padding: 8px;
+    font-size: 15px;
+}
+
+#send-messege-button:hover{
+    background-color: rgb(98, 0, 128);
+    color: rgb(189, 127, 230);
+}
+
+.contact-content{
+    margin-top: 30px;
+}
+
+.txt {
+    border-right: 2px solid rgb(189, 127, 230);
+    font-size: 20px;
+}
+
+@media(min-width: 1200px) {
+    h2{
+        font-size: 30px;
+    }
+
+    .txt{
+        font-size: 25px;
+    }
+
+    .about-me-content{
+        width: 500px;
+    }
+
+    .education-content{
+        width: 500px;
+    }
+
+    p{
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 800px){
+    h2{
+        font-size: 20px;
+    }
+
+    .txt{
+        font-size: 18px;
+    }
+
+    #profile-pic{
+        height: 130px;
+    }
+
+    .school-logo{
+        width: 130px;
+    }
+
+    .toggle-button{
+        display: flex;
+    }
+
+    .navbar-links{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .navbar-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a{
+        padding: 5px 10px;
+    }
+
+    .navbar-links.active{
+        display: flex;
+    }
+
+    .footer{
+        padding: 20px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    h4{
+        font-size: 18px;
+    }
+
+    .education-content li{
+        font-size: 15px;
+    }
+
+    .skills-and-languages{
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .skills-section{
+        margin-right: 0;
+    }
+
+    .languages{
+        padding: 0;
+    }
+
+    .contact-section{
+        flex-direction: column;
+    }
+
+    .user-contact-details{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .user-input{
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px) {
+    h1{
+        font-size: 22px;
+    }
+
+    h2{
+        font-size: 15px;
+    }
+
+    .txt{
+        font-size: 13px;
+    }
+
+    h4{
+        font-size: 13px;
+    }
+
+    p{
+        font-size: 13px;
+    }
+
+    #profile-pic{
+        height: 100px;
+    }
+
+    .school-logo{
+        width: 100px;
+    }
+
+    .education-content li{
+        font-size: 13px;
+    }
+}
+
+.main-page{
+    display: none;
+}
+
+.button--selected{
+    border-bottom: solid rgb(189, 127, 230);
+}
+
+.page--selected{
+    display: block;
+}
