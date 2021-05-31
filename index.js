@@ -94,3 +94,41 @@ function init() {
 
     new TypeWriter(txtElement, words, wait);
 }
+
+const expandButton = document.getElementsByClassName('expand-button');
+const expand = document.getElementsByClassName('expand-functionality');
+const expandTxt = document.getElementsByClassName('education-expand');
+
+console.log(expandButton[0].src);
+console.log(window.location.origin);
+
+expand[0].addEventListener('click', () => {
+    if(expandButton[0].src == window.location.origin + "/images/expand-button.svg"){
+        expandButton[0].src = "/images/collapse-button.svg";
+        expandTxt[0].classList.add("--active");
+    }
+    else {
+        expandButton[0].src = "/images/expand-button.svg";
+        expandTxt[0].classList.remove("--active");
+    }
+});
+
+expand[1].addEventListener('click', () => {
+    if(expandButton[1].src == window.location.origin + "/images/expand-button.svg"){
+        expandButton[1].src = "/images/collapse-button.svg";
+        expandTxt[1].classList.add("--active");
+    } else {
+        expandButton[1].src = "/images/expand-button.svg";
+        expandTxt[1].classList.remove("--active");
+    }
+});
+
+expand[2].addEventListener('click', () => {
+    if(expandButton[2].src == window.location.origin + "/images/expand-button.svg"){
+        expandButton[2].src = "/images/collapse-button.svg";
+        expandTxt[2].classList.add("--active");
+    } else {
+        expandButton[2].src = "/images/expand-button.svg";
+        expandTxt[2].classList.remove("--active");
+    }
+});

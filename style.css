@@ -116,6 +116,16 @@ body{
     margin: 30px 30px 0px 30px;
 }
 
+.about-me-svgs{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.about-me-svg{
+    width: 50px;
+}
+
 .education-content{
     background-color: white;
     color: rgb(98, 0, 128);
@@ -144,6 +154,34 @@ body{
 
 .school-profile{
     margin-left: 10%;
+}
+
+.expand-functionality{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.expand-functionality:hover{
+    cursor: pointer;
+}
+
+.expand-button{
+    margin-left: 10px;
+    height: 20px;
+}
+
+.education-expand{
+    margin-left: 10%;
+    display: none;
+}
+
+.--active{
+    display: block;
+}
+
+.education-expand ul{
+    padding-left: 0;
 }
 
 .skills-and-languages{
@@ -283,6 +321,7 @@ body{
 #send-messege-button:hover{
     background-color: rgb(98, 0, 128);
     color: rgb(189, 127, 230);
+    cursor: pointer;
 }
 
 .contact-content{
