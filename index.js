@@ -99,9 +99,6 @@ const expandButton = document.getElementsByClassName('expand-button');
 const expand = document.getElementsByClassName('expand-functionality');
 const expandTxt = document.getElementsByClassName('education-expand');
 
-console.log(expandButton[0].src);
-console.log(window.location.origin);
-
 expand[0].addEventListener('click', () => {
     if(expandButton[0].src == window.location.origin + "/images/expand-button.svg"){
         expandButton[0].src = "/images/collapse-button.svg";
