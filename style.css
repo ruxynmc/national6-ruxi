@@ -308,7 +308,7 @@ body{
     color: rgb(98, 0, 128);
 }
 
-#send-messege-button{
+#send-message-button{
     background-color: rgb(189, 127, 230);
     color: rgb(98, 0, 128);
     border-style: solid;
@@ -319,7 +319,7 @@ body{
     font-size: 15px;
 }
 
-#send-messege-button:hover{
+#send-message-button:hover{
     background-color: rgb(98, 0, 128);
     color: rgb(189, 127, 230);
     cursor: pointer;
